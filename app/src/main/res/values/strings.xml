@@ -2,8 +2,8 @@
     <string name="app_name">Medical Center</string>
     <string name="filters">Filters</string>
     <string name="search">Search</string>
-    <string name="create_business_account">Create Business Account</string>
-    <string name="quick_search">Quick Search</string>
+    <string name="child_health">Child health</string>
+    <string name="children_behavior">Children behavior</string>
     <string name="bussiness_account">Business Account</string>
     <string name="user_name">User Name</string>
     <string name="type_valid_username">type valid username</string>
@@ -17,7 +17,7 @@
     <string name="type_message_to_admin">type message to admin</string>
     <string name="register">Register</string>
     <string name="cancel">Cancel</string>
-    <string name="generalBrowsing">General Browsing</string>
+    <string name="consultants">Consultants</string>
     <string name="location_details">Location Details :</string>
     <string name="location_name">Location Name :</string>
     <string name="opening_hours">Opening hours :</string>

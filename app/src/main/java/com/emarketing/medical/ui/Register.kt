@@ -16,7 +16,7 @@ class Register : BaseActivity(),RegisterView {
     }
 
     private fun events() {
-        register.setOnClickListener {
+        childHealth.setOnClickListener {
             loading()
             registerViewModel.register(
                 username.text.toString(),

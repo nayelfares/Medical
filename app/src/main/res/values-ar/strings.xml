@@ -3,8 +3,8 @@
     <string name="app_name">Medical Center</string>
     <string name="filters">عوامل التصفية</string>
     <string name="search">بحث</string>
-    <string name="create_business_account">إنشاء حساب أعمال</string>
-    <string name="quick_search">بحث سريع</string>
+    <string name="child_health">صحة الطفل</string>
+    <string name="children_behavior">سلوك الطفل</string>
     <string name="bussiness_account">حساب الأعمال</string>
     <string name="user_name">اسم المستخدم</string>
     <string name="type_valid_username">اكتب اسم مستخدم صالح</string>
@@ -18,7 +18,7 @@
     <string name="type_message_to_admin">اكتب رسالة للمدير</string>
     <string name="register">تسجيل</string>
     <string name="cancel">إلغاء</string>
-    <string name="generalBrowsing">بحث عام</string>
+    <string name="consultants">استشاريين</string>
     <string name="location_details">تفاصيل الموقع :</string>
     <string name="location_name">اسم الموقع :</string>
     <string name="opening_hours">ساعات العمل :</string>
