@@ -2,32 +2,34 @@ package com.emarketing.medical.vm
 
 import android.content.Context
 import com.emarketing.medical.api.MainAPIManager
+import com.emarketing.medical.data.LoginResponse
 import com.emarketing.medical.data.RegisterResponse
 import com.emarketing.medical.data.RequestInterface
+import com.emarketing.medical.ui.LoginView
 import com.emarketing.medical.ui.RegisterView
 import io.reactivex.Observer
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 
-class RegisterViewModel(val registerView: RegisterView, val context: Context) {
+class LoginViewModel(val loginView: LoginView, val context: Context) {
 
-    fun register(name:String,email:String,phone:String,password:String){
+    fun login(email:String,password:String){
         val apiManager= MainAPIManager().provideRetrofitInterface().create(RequestInterface::class.java)
-        val registerVar  = apiManager.register(name,email,phone,password)
+        val registerVar  = apiManager.login(email,password)
         registerVar.subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe(object : Observer<RegisterResponse> {
+            .subscribe(object : Observer<LoginResponse> {
                 override fun onComplete() { }
                 override fun onSubscribe(d: Disposable) { }
-                override fun onNext(t: RegisterResponse) {
+                override fun onNext(t: LoginResponse) {
                     if (t.success)
-                        registerView.onSuccess(t.message)
+                        loginView.loginSuccess(t.data.token)
                     else
-                        registerView.onFailer(t.message)
+                        loginView.loginFailed(t.message)
                 }
                 override fun onError(e: Throwable) {
-                    registerView.onFailer(e.message.toString())
+                    loginView.loginFailed(e.message.toString())
                 }
             })
     }

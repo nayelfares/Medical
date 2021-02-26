@@ -7,6 +7,9 @@ import androidx.appcompat.app.AppCompatActivity
 import com.emarketing.medical.R
 
 abstract class BaseActivity: AppCompatActivity() {
+    companion object{
+        var token=""
+    }
     var dialog: Dialog?=null
     fun showMessage(message:String){
         Toast.makeText(this,message,Toast.LENGTH_LONG).show()

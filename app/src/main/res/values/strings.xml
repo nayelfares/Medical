@@ -34,4 +34,14 @@
     <string name="snapchat">Snapchat :</string>
     <string name="whatsapp">Whatsapp :</string>
     <string name="youtube">Youtube :</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
+    <string name="login_info">Login info</string>
+    <string name="login">Login</string>
+    <string name="forgit_password">Forgit password ?</string>
+    <string name="or">or</string>
 </resources>

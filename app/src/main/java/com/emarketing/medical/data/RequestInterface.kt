@@ -17,9 +17,14 @@ interface RequestInterface {
         @Query("name") name:String,
         @Query("email") file_id:String,
         @Query("phone") phone:String,
-        @Query("password") password:String,
-        @Query("message") message:String
+        @Query("password") password:String
     ): Observable<RegisterResponse>
+
+    @POST("user-login")
+    fun login(
+        @Query("email") file_id:String,
+        @Query("password") password:String
+    ): Observable<LoginResponse>
 
     @POST("center/initialize_search")
     fun getFilters(): Observable<Filters>

@@ -35,4 +35,8 @@
     <string name="snapchat">سناب شات :</string>
     <string name="whatsapp">واتساب :</string>
     <string name="youtube">يوتيوب :</string>
+    <string name="login_info">Login info</string>
+    <string name="login">Login</string>
+    <string name="forgit_password">Forgit password ?</string>
+    <string name="or">or</string>
 </resources>

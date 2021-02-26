@@ -22,8 +22,7 @@ class Register : BaseActivity(),RegisterView {
                 username.text.toString(),
                 email.text.toString(),
                 phone.text.toString(),
-                password.text.toString(),
-                message.text.toString()
+                password.text.toString()
             )
         }
 
