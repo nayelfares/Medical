@@ -18,7 +18,7 @@ interface RequestInterface {
         @Query("email") file_id:String,
         @Query("phone") phone:String,
         @Query("password") password:String
-    ): Observable<RegisterResponse>
+    ): Observable<Response>
 
     @POST("user-login")
     fun login(
@@ -38,4 +38,9 @@ interface RequestInterface {
 
     @GET("category")
     fun getCategories(): Observable<CategoryResult>
+
+    @POST("password/create")
+    fun resetPassword(
+        @Query("email") email:String
+    ): Observable<Response>
 }

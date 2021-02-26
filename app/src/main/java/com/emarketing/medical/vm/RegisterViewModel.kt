@@ -2,7 +2,7 @@ package com.emarketing.medical.vm
 
 import android.content.Context
 import com.emarketing.medical.api.MainAPIManager
-import com.emarketing.medical.data.RegisterResponse
+import com.emarketing.medical.data.Response
 import com.emarketing.medical.data.RequestInterface
 import com.emarketing.medical.ui.RegisterView
 import io.reactivex.Observer
@@ -17,11 +17,11 @@ class RegisterViewModel(val registerView: RegisterView, val context: Context) {
         val registerVar  = apiManager.register(name,email,phone,password)
         registerVar.subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe(object : Observer<RegisterResponse> {
+            .subscribe(object : Observer<Response> {
                 override fun onComplete() { }
                 override fun onSubscribe(d: Disposable) { }
-                override fun onNext(t: RegisterResponse) {
-                    if (t.success)
+                override fun onNext(t: Response) {
+                    if (t.success!=false)
                         registerView.onSuccess(t.message)
                     else
                         registerView.onFailer(t.message)
