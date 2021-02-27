@@ -7,9 +7,7 @@ import android.graphics.Shader
 import android.os.Bundle
 import android.text.TextPaint
 import androidx.appcompat.app.AppCompatActivity
-import com.emarketing.medical.ui.GeneralBrowsing
-import com.emarketing.medical.ui.Register
-import com.emarketing.medical.ui.Search
+import com.emarketing.medical.ui.ArticalsActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -29,13 +27,21 @@ class MainActivity : AppCompatActivity() {
         )
         appName.paint.shader = textShader
         childHealth.setOnClickListener {
-            startActivity(Intent(this, Register::class.java))
+            val intent=Intent(this,ArticalsActivity::class.java)
+            intent.putExtra("catName",resources.getString(R.string.child_health))
+            intent.putExtra("catId",2)
+            startActivity(intent)
         }
-        chilrenBehavior.setOnClickListener { startActivity(Intent(this, Search::class.java)) }
+        chilrenBehavior.setOnClickListener {
+            val intent=Intent(this,ArticalsActivity::class.java)
+            intent.putExtra("catName",resources.getString(R.string.children_behavior))
+            intent.putExtra("catId",1)
+            startActivity(intent)
+        }
         consultants.setOnClickListener { startActivity(
             Intent(
                 this,
-                GeneralBrowsing::class.java
+                ArticalsActivity::class.java
             )
         ) }
     }

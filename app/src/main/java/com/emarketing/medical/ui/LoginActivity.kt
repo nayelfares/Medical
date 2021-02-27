@@ -45,7 +45,7 @@ class LoginActivity : BaseActivity(),LoginView {
 
     override fun loginSuccess(token: String) {
         stopLoading()
-        BaseActivity.token=token
+        BaseActivity.token="Bearer $token"
         startActivity(Intent(this,MainActivity::class.java))
         finish()
     }

@@ -1,7 +1,16 @@
 package com.emarketing.medical.data
 
+import com.google.gson.annotations.SerializedName
 import java.util.ArrayList
 
-data class Category (val id:Long,val name:String,val image:String)
+data class Article(
+    val photos:ArrayList<String>?,
+    val status:String?,
+    val category:String?,
+    val sub_category:String?,
+    @SerializedName("address")
+    val title:String?,
+    val body:String?
+    )
 
-data class CategoryResult(val success:Boolean,val message:String,val data: ArrayList<Category>)
+data class ArticleResult(val success:Boolean,val message:String,val data: ArrayList<Article>)

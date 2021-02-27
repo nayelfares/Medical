@@ -26,9 +26,6 @@ interface RequestInterface {
         @Query("password") password:String
     ): Observable<LoginResponse>
 
-    @POST("center/initialize_search")
-    fun getFilters(): Observable<Filters>
-
     @POST("center/with_filters")
     fun search(
         @Query("tag") tag:Long?,
@@ -36,8 +33,11 @@ interface RequestInterface {
         @Query("city") city:Long?
     ): Observable<SearchResult>
 
-    @GET("category")
-    fun getCategories(): Observable<CategoryResult>
+    @GET("article/search")
+    fun getArticleList(
+        @Header("Authorization")  token:String,
+        @Query("category_id") categoryId:Int
+    ): Observable<ArticleResult>
 
     @POST("password/create")
     fun resetPassword(
