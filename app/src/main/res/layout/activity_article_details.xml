@@ -50,8 +50,15 @@
                     android:id="@+id/name"
                     android:textSize="18sp"
                     android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
                     android:textColor="@color/black"/>
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:id="@+id/photosView"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -63,23 +70,7 @@
                     android:layout_marginTop="8dp"
                     android:textColor="@color/black"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:gravity="center"
-                android:layout_gravity="center"
-                android:text="@string/no_photos"
-                android:fontFamily="@font/yellowtail"
-                android:textSize="32sp"
-                android:id="@+id/noResults"
-                android:visibility="gone"/>
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="8dp"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                android:id="@+id/photosView"/>
+
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 

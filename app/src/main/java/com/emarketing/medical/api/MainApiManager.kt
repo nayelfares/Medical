@@ -34,5 +34,5 @@ open class MainAPIManager {
 
 
 fun String?.toUrl():String{
-    return "https://zoho.towarddevelopment.org$this"
+    return "https://zoho.towarddevelopment.org/public$this"
 }

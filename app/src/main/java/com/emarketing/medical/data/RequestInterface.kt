@@ -7,11 +7,6 @@ import retrofit2.http.*
 
 
 interface RequestInterface {
-
-    @GET
-    fun downlload(@Url fileUrl: String?): Call<ResponseBody>
-
-
     @POST("user-register")
     fun register(
         @Query("name") name:String,
@@ -25,13 +20,6 @@ interface RequestInterface {
         @Query("email") file_id:String,
         @Query("password") password:String
     ): Observable<LoginResponse>
-
-    @POST("center/with_filters")
-    fun search(
-        @Query("tag") tag:Long?,
-        @Query("category") category:Long?,
-        @Query("city") city:Long?
-    ): Observable<SearchResult>
 
     @GET("article/search")
     fun getArticleList(
