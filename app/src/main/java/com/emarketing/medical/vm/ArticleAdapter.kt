@@ -1,6 +1,7 @@
 package com.emarketing.medical.vm
 
 import android.content.Context
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import com.bumptech.glide.Glide
 import com.emarketing.medical.R
 import com.emarketing.medical.api.toUrl
 import com.emarketing.medical.data.Article
+import com.emarketing.medical.ui.ArticleDetails
 import kotlinx.android.synthetic.main.category_item_row.view.*
 
 
@@ -35,11 +37,9 @@ class ArticleAdapter(val context:Context, val articles:ArrayList<Article>) : Rec
         else
             holder.itemView.setBackgroundColor(context.getColor(R.color.white))
         holder.itemView.setOnClickListener {
-//            val intent=Intent(context,Search::class.java)
-//            intent.putExtra("categoryId", category.id)
-//            intent.putExtra("fromCategory", true)
-//            context.startActivity(intent)
-            Log.e("url",article.photos!![0].toUrl())
+            val intent= Intent(context,ArticleDetails::class.java)
+            intent.putExtra("article",article)
+            context.startActivity(intent)
         }
     }
 

@@ -10,7 +10,7 @@ import com.bumptech.glide.Glide
 import com.emarketing.medical.R
 import com.emarketing.medical.api.toUrl
 import com.emarketing.medical.data.Site
-import com.emarketing.medical.ui.LocationDetails
+import com.emarketing.medical.ui.ArticleDetails
 import kotlinx.android.synthetic.main.search_item_row.view.*
 
 
@@ -31,7 +31,7 @@ class ResultAdapter(val context:Context, val results:ArrayList<Site>) : Recycler
         holder.name.text=result.name
 
         holder.image.setOnClickListener {
-            val intent=Intent(context,LocationDetails::class.java)
+            val intent=Intent(context,ArticleDetails::class.java)
             intent.putExtra("location", result)
             context.startActivity(intent)
 //            val link="https://maps.google.com/?q=${result.latitude},${result.longitude}"
