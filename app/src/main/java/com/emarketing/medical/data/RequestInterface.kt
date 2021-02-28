@@ -31,4 +31,12 @@ interface RequestInterface {
     fun resetPassword(
         @Query("email") email:String
     ): Observable<Response>
+
+    @GET("doctor/search")
+    fun getDoctorsList(
+        @Header("Authorization")  token:String,
+        @Query("address") address:String?=null,
+        @Query("name") name:String?=null,
+        @Query("specialization") specialization:String?=null
+    ): Observable<DoctorsListResult>
 }

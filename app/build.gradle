@@ -48,5 +48,5 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.11.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
     implementation 'com.ramotion.cardslider:card-slider:0.3.1'  // Image slider
-
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 }

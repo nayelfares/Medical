@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.text.TextPaint
 import androidx.appcompat.app.AppCompatActivity
 import com.emarketing.medical.ui.ArticalsActivity
+import com.emarketing.medical.ui.ConsultantsActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -38,11 +39,10 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("catId",1)
             startActivity(intent)
         }
-        consultants.setOnClickListener { startActivity(
-            Intent(
-                this,
-                ArticalsActivity::class.java
-            )
-        ) }
+        consultants.setOnClickListener {
+            val intent=Intent(this,ConsultantsActivity::class.java)
+            intent.putExtra("catName",resources.getString(R.string.consultants))
+            startActivity(intent)
+         }
     }
 }

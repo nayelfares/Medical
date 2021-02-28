@@ -14,7 +14,7 @@
         android:theme="@style/AppTheme.Fullscreen">
         <activity android:name=".ui.ArticalsActivity"/>
         <activity android:name=".ui.ArticleDetails" />
-        <activity android:name=".ui.Search" />
+        <activity android:name=".ui.ConsultantsActivity" />
         <activity android:name=".ui.Register" />
         <activity android:name=".MainActivity" />
         <activity android:name=".ui.LoginActivity">
