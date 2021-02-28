@@ -1,6 +1,7 @@
 package com.emarketing.medical.vm
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +10,7 @@ import com.bumptech.glide.Glide
 import com.emarketing.medical.R
 import com.emarketing.medical.api.toUrl
 import com.emarketing.medical.data.Doctor
+import com.emarketing.medical.ui.DoctorDetails
 import kotlinx.android.synthetic.main.doctor_item_row.view.*
 import java.lang.Exception
 
@@ -25,7 +27,7 @@ class DoctorAdapter(val context:Context, val articles:ArrayList<Doctor>) : Recyc
         holder.name.text=article.name
         holder.specialization.text=article.specialization
         try {
-            holder.rating.rating = article.rating.toFloat()
+            holder.rating.rating = article.rating!!.toFloat()
         }catch (e:Exception){
             holder.rating.rating = 1f
         }
@@ -37,9 +39,9 @@ class DoctorAdapter(val context:Context, val articles:ArrayList<Doctor>) : Recyc
         else
             holder.itemView.setBackgroundColor(context.getColor(R.color.white))
         holder.itemView.setOnClickListener {
-//            val intent= Intent(context,ArticleDetails::class.java)
-//            intent.putExtra("article",article)
-//            context.startActivity(intent)
+            val intent= Intent(context,DoctorDetails::class.java)
+            intent.putExtra("doctor",article)
+            context.startActivity(intent)
         }
     }
 

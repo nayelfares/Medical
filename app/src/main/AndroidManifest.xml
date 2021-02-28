@@ -16,6 +16,7 @@
         <activity android:name=".ui.ArticleDetails" />
         <activity android:name=".ui.ConsultantsActivity" />
         <activity android:name=".ui.Register" />
+        <activity android:name=".ui.DoctorDetails" />
         <activity android:name=".MainActivity" />
         <activity android:name=".ui.LoginActivity">
             <intent-filter>
