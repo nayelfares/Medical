@@ -50,4 +50,7 @@
     <string name="profile_details">Profile Details</string>
     <string name="details">Details   :</string>
     <string name="submit_profile">Submit</string>
+    <string name="birth_date">Birth date  :</string>
+    <string name="ok">Ok</string>
+    <string name="no_change">no change</string>
 </resources>

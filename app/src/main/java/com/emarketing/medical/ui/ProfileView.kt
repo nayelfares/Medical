@@ -9,4 +9,6 @@ interface ProfileView {
 
     fun updatePhotoOnSuccess(message:String,uri: Uri)
     fun updatePhotoOnSFailer(message:String)
+    fun updateProfileSuccess(message: String)
+    fun updateProfileFailed(message: String)
 }

@@ -39,6 +39,36 @@ class ProfileViewModel(val profileView: ProfileView,val context: Context) {
             })
     }
 
+    fun updateProfie(name:String,phone:String,dob:String,details:String,password:String){
+        val apiManager= MainAPIManager().provideRetrofitInterface().create(RequestInterface::class.java)
+        var registerVar  = apiManager.updateProfile(
+            BaseActivity.token,
+            BaseActivity.id,
+            name,phone,dob,details,password
+        )
+        if (password.trim()=="")
+            registerVar  = apiManager.updateProfile(
+                BaseActivity.token,
+                BaseActivity.id,
+                name,phone,dob,details
+            )
+        registerVar.subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(object : Observer<Response> {
+                override fun onComplete() { }
+                override fun onSubscribe(d: Disposable) { }
+                override fun onNext(t: Response) {
+                    if (t.success!=false)
+                        profileView.updateProfileSuccess(t.message)
+                    else
+                        profileView.updateProfileFailed(t.message)
+                }
+                override fun onError(e: Throwable) {
+                    profileView.updateProfileFailed(context.resources.getString(R.string.check_intenet_connection))
+                }
+            })
+    }
+
     fun updatePhoto(uri: Uri){
         val apiManager= MainAPIManager().provideRetrofitInterface().create(RequestInterface::class.java)
         val picture = File(uri.path!!)

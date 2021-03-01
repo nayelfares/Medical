@@ -167,6 +167,58 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1.5"
+                    android:text="@string/birth_date"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="8dp"
+                    android:gravity="start|center"
+                    android:textStyle="bold"/>
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:textColor="@color/black"
+                    android:id="@+id/birthDate"
+                    android:textSize="16sp"
+                    android:layout_marginStart="8dp"
+                    android:gravity="start"
+                    android:textStyle="normal"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.5"
+                    android:text="@string/password"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="8dp"
+                    android:gravity="start|center"
+                    android:textStyle="bold"/>
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:textColor="@color/black"
+                    android:hint="@string/no_change"
+                    android:paddingStart="8dp"
+                    android:id="@+id/password"
+                    android:textSize="16sp"
+                    android:layout_marginStart="8dp"
+                    android:gravity="start"
+                    android:textStyle="italic"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.5"
                     android:text="@string/details"
                     android:textSize="16sp"
                     android:textColor="@color/black"

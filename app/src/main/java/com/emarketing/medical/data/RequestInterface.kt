@@ -62,4 +62,16 @@ interface RequestInterface {
         @Part photo: MultipartBody.Part,
         @Query("id") id:Int
     ): Observable<Response>
+
+    @POST("user-profile_update")
+    fun updateProfile(
+        @Header("Authorization")  token:String,
+        @Query("id") id:Int,
+        @Query("name") name:String,
+        @Query("phone") phone:String,
+        @Query("dob") dob:String,
+        @Query("details") details:String,
+        @Query("password") password:String?=null
+    ): Observable<Response>
+
 }
