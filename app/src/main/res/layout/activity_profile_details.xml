@@ -205,6 +205,7 @@
                     android:textColor="@color/black"
                     android:hint="@string/no_change"
                     android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
                     android:id="@+id/password"
                     android:textSize="16sp"
                     android:layout_marginStart="8dp"

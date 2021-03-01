@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">Medical Center</string>
-    <string name="filters">Filters</string>
-    <string name="search">Search</string>
     <string name="child_health">Child health</string>
     <string name="children_behavior">Children behavior</string>
     <string name="bussiness_account">Business Account</string>
@@ -13,27 +11,13 @@
     <string name="email_hint">email@example.com</string>
     <string name="password">Password</string>
     <string name="password_hint">**********</string>
-    <string name="message">Message</string>
-    <string name="type_message_to_admin">type message to admin</string>
     <string name="register">Register</string>
     <string name="cancel">Cancel</string>
     <string name="consultants">Consultants</string>
-    <string name="location_details">Location Details :</string>
-    <string name="location_name">Location Name :</string>
-    <string name="opening_hours">Opening hours :</string>
-    <string name="no_photos">No photos for this location</string>
-    <string name="no_results">No Results</string>
-    <string name="select_city">Select city</string>
-    <string name="select_category">Select category</string>
-    <string name="select_tag">Select tag</string>
     <string name="address">Address  :</string>
     <string name="email">Email address :</string>
     <string name="phone">Phone number :</string>
-    <string name="facebook">Facebook  :</string>
-    <string name="instagram">Instagram :</string>
-    <string name="snapchat">Snapchat :</string>
     <string name="whatsapp">Whatsapp :</string>
-    <string name="youtube">Youtube :</string>
     <string name="login_info">Login info</string>
     <string name="login">Login</string>
     <string name="forgit_password">Forgit password ?</string>
@@ -53,4 +37,5 @@
     <string name="birth_date">Birth date  :</string>
     <string name="ok">Ok</string>
     <string name="no_change">no change</string>
+    <string name="new_account">New Account</string>
 </resources>
