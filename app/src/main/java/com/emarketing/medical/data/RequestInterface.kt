@@ -47,4 +47,10 @@ interface RequestInterface {
         @Query("value") value:Int,
         @Query("user_id") user_id:Int
     ): Observable<Response>
+
+    @GET("user-profile_get")
+    fun getProfile(
+        @Header("Authorization")  token:String,
+        @Query("id") id:Int
+    ): Observable<ProfileResponse>
 }
