@@ -44,4 +44,5 @@
     <string name="read_more"><![CDATA[Read more >>>]]></string>
     <string name="specialization">Specialization</string>
     <string name="submit">Submit rating</string>
+    <string name="check_intenet_connection">Check your internet connection</string>
 </resources>

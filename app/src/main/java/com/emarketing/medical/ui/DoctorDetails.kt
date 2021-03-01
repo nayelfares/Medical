@@ -44,6 +44,7 @@ class DoctorDetails : BaseActivity() {
         }
 
         submit.setOnClickListener {
+            loading()
             val apiManager= MainAPIManager().provideRetrofitInterface().create(RequestInterface::class.java)
             val rateVar  = apiManager.rate(token,doctor.id,rating.numStars,id)
             rateVar.subscribeOn(Schedulers.io())
@@ -53,13 +54,18 @@ class DoctorDetails : BaseActivity() {
                     override fun onSubscribe(d: Disposable) { }
                     override fun onNext(t: Response) {
                         if (t.success!=false) {
+                            showMessage(t.message)
                             stopLoading()
                             submit.visibility = View.GONE
+                            rating.setIsIndicator(true)
                         }
-                        else
+                        else {
+                            showMessage(t.message)
                             stopLoading()
+                        }
                     }
                     override fun onError(e: Throwable) {
+                        showMessage(resources.getString(R.string.check_intenet_connection))
                         stopLoading()
                     }
                 })

@@ -99,6 +99,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
+                    android:textAlignment="viewStart"
                     android:textColor="@color/black"
                     android:id="@+id/specialization"
                     android:textSize="16sp"
@@ -183,7 +184,7 @@
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal">
                 <TextView
                     android:layout_width="0dp"
@@ -197,22 +198,26 @@
                     android:textStyle="bold"/>
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_weight="3"
                     android:textColor="@color/black"
                     android:id="@+id/whatsapp"
                     android:textSize="16sp"
+                    android:autoLink="web"
+                    android:linksClickable="true"
+                    android:textColorLink="#FF0000"
                     android:layout_marginStart="8dp"
                     android:gravity="start"
                     android:textStyle="normal"/>
             </LinearLayout>
 
             <RatingBar
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:numStars="5"
                 android:id="@+id/rating"
-                android:layout_marginTop="16dp"/>
+                android:numStars="5"
+                android:gravity="center"
+                android:layout_gravity="center"/>
             <androidx.appcompat.widget.AppCompatButton
                 android:layout_width="200dp"
                 android:layout_height="40dp"
