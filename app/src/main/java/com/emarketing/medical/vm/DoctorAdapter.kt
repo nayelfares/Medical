@@ -23,16 +23,16 @@ class DoctorAdapter(val context:Context, val articles:ArrayList<Doctor>) : Recyc
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val article = articles[position]
-        holder.name.text=article.name
-        holder.specialization.text=article.specialization
+        val doctor = articles[position]
+        holder.name.text=doctor.name
+        holder.specialization.text=doctor.specialization
         try {
-            holder.rating.rating = article.rating!!.toInt().toFloat()
+            holder.rating.rating = doctor.rating!!.toInt().toFloat()
         }catch (e:Exception){
             holder.rating.rating = 1f
         }
         Glide.with(context)
-                .load(article.photo.toUrl())
+                .load(doctor.photo.toUrl())
                 .into(holder.photo)
         if (position%2==0)
             holder.itemView.setBackgroundColor(context.getColor(R.color.colorAccentTransparence))
@@ -40,7 +40,7 @@ class DoctorAdapter(val context:Context, val articles:ArrayList<Doctor>) : Recyc
             holder.itemView.setBackgroundColor(context.getColor(R.color.white))
         holder.itemView.setOnClickListener {
             val intent= Intent(context,DoctorDetails::class.java)
-            intent.putExtra("doctor",article)
+            intent.putExtra("doctor",doctor)
             context.startActivity(intent)
         }
     }
