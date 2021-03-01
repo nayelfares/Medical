@@ -46,7 +46,7 @@ class DoctorDetails : BaseActivity() {
         submit.setOnClickListener {
             loading()
             val apiManager= MainAPIManager().provideRetrofitInterface().create(RequestInterface::class.java)
-            val rateVar  = apiManager.rate(token,doctor.id,rating.numStars,id)
+            val rateVar  = apiManager.rate(token,doctor.id,rating.rating.toInt(),id)
             rateVar.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(object : Observer<Response> {

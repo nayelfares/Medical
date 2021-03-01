@@ -28,6 +28,8 @@ class ProfileDetails : BaseActivity() ,ProfileView{
         photo.setOnClickListener {
                 CropImage.activity().setGuidelines(CropImageView.Guidelines.ON).start(this)
         }
+        cameraContainer.setOnClickListener{photo.callOnClick()}
+        camera.setOnClickListener{photo.callOnClick()}
     }
 
     override fun getProfileSuccess(profile: Profile) {
