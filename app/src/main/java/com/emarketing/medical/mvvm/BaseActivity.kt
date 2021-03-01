@@ -8,6 +8,7 @@ import com.emarketing.medical.R
 
 abstract class BaseActivity: AppCompatActivity() {
     companion object{
+        var id: Int = 0
         var token=""
     }
     var dialog: Dialog?=null

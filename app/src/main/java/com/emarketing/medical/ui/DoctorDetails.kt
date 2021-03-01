@@ -3,14 +3,19 @@ package com.emarketing.medical.ui
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
+import android.widget.RatingBar
 import androidx.core.net.toUri
 import com.bumptech.glide.Glide
 import com.emarketing.medical.R
+import com.emarketing.medical.api.MainAPIManager
 import com.emarketing.medical.api.toUrl
-import com.emarketing.medical.data.Article
-import com.emarketing.medical.data.Doctor
+import com.emarketing.medical.data.*
 import com.emarketing.medical.mvvm.BaseActivity
 import com.emarketing.medical.vm.PhotoAdapter
+import io.reactivex.Observer
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.Disposable
+import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_article_details.*
 import kotlinx.android.synthetic.main.activity_doctor_details.*
 
@@ -30,5 +35,34 @@ class DoctorDetails : BaseActivity() {
         email.text=doctor.email
         phone.text=doctor.mobile
         whatsapp.text=doctor.whatsapp
+
+        rating.onRatingBarChangeListener=object :RatingBar.OnRatingBarChangeListener{
+            override fun onRatingChanged(ratingBar: RatingBar?, rating: Float, fromUser: Boolean) {
+                submit.visibility=View.VISIBLE
+            }
+
+        }
+
+        submit.setOnClickListener {
+            val apiManager= MainAPIManager().provideRetrofitInterface().create(RequestInterface::class.java)
+            val rateVar  = apiManager.rate(token,doctor.id,rating.numStars,id)
+            rateVar.subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(object : Observer<Response> {
+                    override fun onComplete() { }
+                    override fun onSubscribe(d: Disposable) { }
+                    override fun onNext(t: Response) {
+                        if (t.success!=false) {
+                            stopLoading()
+                            submit.visibility = View.GONE
+                        }
+                        else
+                            stopLoading()
+                    }
+                    override fun onError(e: Throwable) {
+                        stopLoading()
+                    }
+                })
+        }
     }
 }

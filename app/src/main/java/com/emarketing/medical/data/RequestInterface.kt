@@ -39,4 +39,12 @@ interface RequestInterface {
         @Query("name") name:String?=null,
         @Query("specialization") specialization:String?=null
     ): Observable<DoctorsListResult>
+
+    @POST("doctor/rating/add")
+    fun rate(
+        @Header("Authorization")  token:String,
+        @Query("doctor_id") doctor_id:Int,
+        @Query("value") value:Int,
+        @Query("user_id") user_id:Int
+    ): Observable<Response>
 }
