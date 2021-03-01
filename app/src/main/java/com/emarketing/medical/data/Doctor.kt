@@ -14,7 +14,7 @@ data class Doctor(
     val whatsapp:String,
     val specialization:String,
     val descritption:String?,
-    val rating: String?
+    val rating: Float?
     ): Parcelable
 
 data class DoctorsListResult(val success:Boolean,val message:String,val data: ArrayList<Doctor>)

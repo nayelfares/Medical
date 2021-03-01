@@ -27,7 +27,7 @@ class DoctorAdapter(val context:Context, val articles:ArrayList<Doctor>) : Recyc
         holder.name.text=article.name
         holder.specialization.text=article.specialization
         try {
-            holder.rating.rating = article.rating!!.toFloat()
+            holder.rating.rating = article.rating!!.toInt().toFloat()
         }catch (e:Exception){
             holder.rating.rating = 1f
         }

@@ -43,7 +43,7 @@ class ProfileViewModel(val profileView: ProfileView,val context: Context) {
         val apiManager= MainAPIManager().provideRetrofitInterface().create(RequestInterface::class.java)
         val picture = File(uri.path!!)
         var requestFile=picture.asRequestBody("multipart/form-data".toMediaTypeOrNull())
-        val body = MultipartBody.Part.createFormData("profile_image_url", picture.name, requestFile)
+        val body = MultipartBody.Part.createFormData("photo", picture.name, requestFile)
         val loginVar  = apiManager.upload(BaseActivity.token,body,BaseActivity.id)
         loginVar?.subscribeOn(Schedulers.io())
             ?.observeOn(AndroidSchedulers.mainThread())

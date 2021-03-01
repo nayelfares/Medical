@@ -59,7 +59,7 @@ interface RequestInterface {
     @Multipart
     fun upload(
         @Header("Authorization") authorization:String ,
-        @Part profile_image_url: MultipartBody.Part,
+        @Part photo: MultipartBody.Part,
         @Query("id") id:Int
     ): Observable<Response>
 }
