@@ -1,6 +1,7 @@
 package com.emarketing.medical.data
 
 import io.reactivex.Observable
+import okhttp3.MultipartBody
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.http.*
@@ -53,4 +54,12 @@ interface RequestInterface {
         @Header("Authorization")  token:String,
         @Query("id") id:Int
     ): Observable<ProfileResponse>
+
+    @POST("change_photo")
+    @Multipart
+    fun upload(
+        @Header("Authorization") authorization:String ,
+        @Part profile_image_url: MultipartBody.Part,
+        @Query("id") id:Int
+    ): Observable<Response>
 }
